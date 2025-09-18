@@ -1,4 +1,4 @@
-# tSimple User Management System
+# Simple User Management System
 
 ## Steps to run the Application on your local machine
 
