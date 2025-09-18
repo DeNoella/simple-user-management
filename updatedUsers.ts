@@ -7,7 +7,9 @@ type User = {
     physicalAddress: string;
 
 }
-const Users: User[] =
+
+function getUsers(): any {
+const users: User[] =
     [
         {
 
@@ -52,5 +54,8 @@ const Users: User[] =
         }
 
     ]
-
-    console.log(Users);
+    return users;
+}
+    // const gUser = getUsers();
+    // console.log(gUser[0])
+    console.log(getUsers());
