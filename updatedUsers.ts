@@ -1,18 +1,15 @@
-type User = {
-    id: number;
-    fullname: string;
-    email: string;
-    phoneNumber: string;
-    age: number;
-    physicalAddress: string;
+(() => {
+    type User = {
+        id: number;
+        fullname: string;
+        email: string;
+        phoneNumber: string;
+        age: number;
+        physicalAddress: string;
+    }
 
-}
-
-function getUsers(): any {
-const users: User[] =
-    [
+    const users: User[] = [
         {
-
             id: 101,
             fullname: "Noella",
             email: "noella@gmail.com",
@@ -52,10 +49,26 @@ const users: User[] =
             age: 20,
             physicalAddress: "Dubai"
         }
+    ];
 
-    ]
-    return users;
-}
-    // const gUser = getUsers();
-    // console.log(gUser[0])
-    console.log(getUsers());
+    function myProfile(userId: number): User | undefined {
+        return users.find(user => user.id === userId);
+    }
+
+    function lessAge(ageLimit: number): User | undefined {
+        return users.find(user => user.age < ageLimit);
+    }
+
+    function getUsers(): User[] {
+        return users;
+    }
+
+    const user = myProfile(103);
+    console.log(user);
+    console.log("===============");
+    const youngUser = lessAge(27);
+    console.log(youngUser);
+    console.log("===============");
+    const allUsers = getUsers();
+    console.log(allUsers);
+})();

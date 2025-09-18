@@ -1,4 +1,4 @@
-function getUsers() {
+(function () {
     var users = [
         {
             id: 101,
@@ -41,8 +41,21 @@ function getUsers() {
             physicalAddress: "Dubai"
         }
     ];
-    return users;
-}
-// const gUser = getUsers();
-// console.log(gUser[0])
-console.log(getUsers());
+    function myProfile(userId) {
+        return users.find(function (user) { return user.id === userId; });
+    }
+    function lessAge(ageLimit) {
+        return users.find(function (user) { return user.age < ageLimit; });
+    }
+    function getUsers() {
+        return users;
+    }
+    var user = myProfile(103);
+    console.log(user);
+    console.log("===============");
+    var youngUser = lessAge(27);
+    console.log(youngUser);
+    console.log("===============");
+    var allUsers = getUsers();
+    console.log(allUsers);
+})();
