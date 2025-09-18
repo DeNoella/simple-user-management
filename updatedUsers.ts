@@ -51,11 +51,13 @@
         }
     ];
 
-    function myProfile(userId: number): User | undefined {
-        return users.find(user => user.id === userId);
+    function myProfile(): User | undefined {
+        const id = 103;
+        return users.find(user => user.id === id);
     }
 
-    function lessAge(ageLimit: number): User | undefined {
+    function lessAge(): User | undefined {
+        const ageLimit = 27;
         return users.find(user => user.age < ageLimit);
     }
 
@@ -63,10 +65,10 @@
         return users;
     }
 
-    const user = myProfile(103);
+    const user = myProfile();
     console.log(user);
     console.log("===============");
-    const youngUser = lessAge(27);
+    const youngUser = lessAge();
     console.log(youngUser);
     console.log("===============");
     const allUsers = getUsers();
